@@ -105,6 +105,7 @@ int main(void)
   MX_USART6_UART_Init();
   MX_USB_DEVICE_Init();
   MX_TIM8_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 	Init_Task();
 	HAL_TIM_Base_Start(&htim8);

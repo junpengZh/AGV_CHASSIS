@@ -531,6 +531,33 @@ void Precision_Mode_Update(void)
 	}
 };
 
+void Xpower_Mode_Update(void)
+{
+	switch(RC.mode)
+	{
+		case HANDLE_CONTROL :
+		break;
+		case KEYBOARD_CONTROL :
+			switch(xpower.mode)
+			{
+				case XPOWER_STOP   :
+					if(RC.rc_receive.key_board.button.Z && delay_time.xpower_mode_cnt==0)
+					{
+						xpower.mode=XPOWER_STOP;
+						delay_time.xpower_mode_cnt=400;
+					}
+				break;
+				case XPOWER_RUNNING   :
+					if(RC.rc_receive.key_board.button.X && delay_time.xpower_mode_cnt==0)
+					{
+						xpower.mode=XPOWER_RUNNING;
+						delay_time.xpower_mode_cnt=400;
+					}
+				break;
+			}
+			break;
+   }
+}
 void Trigger_Shoot_Number_Update(void)
 {
 	switch (RC.mode)
@@ -681,5 +708,6 @@ void Remote_Task(void)
 	Control_Mode_Update();
 	//更新遥控器模式
 	Rc_Mode_Update();
+	Xpower_Mode_Update();
 };
 

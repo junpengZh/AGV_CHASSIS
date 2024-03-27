@@ -85,6 +85,8 @@ extern FRIC_T  fric;
 extern XPOWER_COMMAND_T xpower;
 void Fric_Init(void);
 void Fric_Task(void);
+void Xpower_Command_Update(void);
+void Xpower_Send(void);
 
 #endif // !FRIC_H_
 

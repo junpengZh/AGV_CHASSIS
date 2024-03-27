@@ -171,6 +171,8 @@ extern RC_T RC;
 extern int Transmission_Mode;
 void Delay_Cnt_Task(void);
 void Remote_Task(void);
+void Rc_Mode_Update(void);
+void Xpower_Mode_Update(void);
 
 #endif
 
